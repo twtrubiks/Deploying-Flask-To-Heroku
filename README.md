@@ -10,6 +10,7 @@ Deploying a Flask App To Heroku Tutorial 📝
 * 可以創造 5個 app。
 * 24小時一定要休息6小時的規定。
 * 支援很多種程式語言。
+* 有SSL(https)。
 
 更多說明請參考 [Heroku](https://dashboard.heroku.com/) 
 
@@ -35,6 +36,7 @@ heroku --version
 ```
 
 如果安裝正確，會跳出你安裝的 Heroku CLI 版本
+
 ![alt tag](http://i.imgur.com/UuWGUk1.jpg)
 
 
@@ -127,6 +129,7 @@ python-3.4.3
 heroku create
 ```
 ![alt tag](http://i.imgur.com/OJS8K3N.jpg)
+
 p.s 你看到的網址會和我看到的不一樣，請輸入你看到的
 
 方法二 :
@@ -141,7 +144,8 @@ p.s 你看到的網址會和我看到的不一樣，請輸入你看到的
 git init
 ```
 
-然後指定 remote
+#### 佈署
+指定 remote
 ``` 
 heroku git:remote -a tranquil-earth-29753
 ```
@@ -164,6 +168,15 @@ git push heroku master
 
 ![alt tag](http://i.imgur.com/gPaK7kd.jpg)
 
+佈署完畢，網址的格式為，如上面這張圖
+``` 
+https://[ 你的 app 名稱 ].herokuapp.com/
+```
+例如我的網址格式為
+``` 
+https://tranquil-earth-29753.herokuapp.com/
+```
+
 ## 畫面
 
 如果使用我的範例佈署成功，畫面應該如下
@@ -171,6 +184,29 @@ git push heroku master
 我的網址為 [https://tranquil-earth-29753.herokuapp.com/](https://tranquil-earth-29753.herokuapp.com/)
 
 ![alt tag](http://i.imgur.com/WGjBKEJ.jpg)
+
+## LOG 資訊
+
+<b>log 的資訊非常重要</b>，因為有時候本機端可以正常運行，但佈署上去就無法運行，
+
+所以這時候就要看 log 資訊。
+
+可以使用以下指令查看你在 heroku上 的 web app 的 log 
+
+``` 
+heroku logs
+```
+![alt tag](http://i.imgur.com/1Oe5rER.jpg)
+
+或是可以從網頁端查看
+
+![alt tag](http://i.imgur.com/NmyRvxs.jpg)
+
+網址格式為
+``` 
+https://dashboard.heroku.com/apps/[ 你的 app 名稱 ]/logs
+```
+
 
 ## Reference 
 * [Heroku](https://dashboard.heroku.com/)
