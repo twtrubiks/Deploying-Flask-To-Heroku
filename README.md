@@ -92,15 +92,6 @@ Procfile 這個檔案是要告訴 [Heroku](https://dashboard.heroku.com/) 要如
 
 所以在 <b>requirements.txt</b> 裡，請記得要輸入 [gunicorn](http://gunicorn.org/)
 
-在建立 Procfile 這個檔案時
-
-因為 Windows 無法直接建立一個沒有名稱卻只有副檔名的檔案
-
-所以，我們必須在 cmd (命令提示字元) 輸入以下指令
-``` 
-touch Procfile
-```
-
 Procfile 檔案，基本使用方法如下
 ``` 
 web gunicorn app_run:app
