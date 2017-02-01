@@ -1,7 +1,7 @@
 # Deploying-Flask-To-Heroku
 Deploying a Flask App To Heroku Tutorial 📝  
 
-* [Youtube Demo 待新增]()   
+* [Youtube Demo](https://youtu.be/fidKOYWWfkM)   
 
 今天教大家如何佈署 Flask App 到 [Heroku](https://dashboard.heroku.com/) 
 
@@ -197,7 +197,8 @@ heroku logs
 ``` 
 https://dashboard.heroku.com/apps/[ 你的 app 名稱 ]/logs
 ```
-
+## 執行環境 
+* Windows 10
 
 ## Reference 
 * [Heroku](https://dashboard.heroku.com/)
