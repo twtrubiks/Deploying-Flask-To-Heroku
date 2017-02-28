@@ -2,8 +2,9 @@
 Deploying a Flask App To Heroku Tutorial 📝  
 
 * [Youtube Demo](https://youtu.be/fidKOYWWfkM)   
+* [How to use Heroku Postgres deploying](https://youtu.be/OvQetdMN88E)
 
-今天教大家如何佈署 Flask App 到 [Heroku](https://dashboard.heroku.com/) 
+今天教大家如何佈署 Flask App 到 [Heroku](https://dashboard.heroku.com/)
 
 [Heroku](https://dashboard.heroku.com/) 免費版本
 
@@ -12,7 +13,7 @@ Deploying a Flask App To Heroku Tutorial 📝
 * 支援很多種程式語言。
 * 有SSL(https)。
 
-更多說明請參考 [Heroku](https://dashboard.heroku.com/) 
+更多說明請參考 [Heroku](https://dashboard.heroku.com/)
 
 
 ## 教學
@@ -31,7 +32,7 @@ Deploying a Flask App To Heroku Tutorial 📝
 
 安裝完後，請使用你的 cmd (命令提示字元) 輸入以下指令
 
-``` 
+```
 heroku --version
 ```
 
@@ -41,7 +42,7 @@ heroku --version
 
 
 接著再請你使用你的 cmd (命令提示字元) 輸入你的 [Heroku](https://dashboard.heroku.com/) 帳號  和 密碼
-``` 
+```
 heroku login
 ```
 ![alt tag](http://i.imgur.com/6vtoORM.jpg)
@@ -50,12 +51,12 @@ heroku login
 
 請先 clone 我的簡單 flask 範例
 
-``` 
+```
 git clone https://github.com/twtrubiks/Deploying-Flask-To-Heroku.git
 ```
 
-在資料夾裡，有幾個比較重要的檔案，分別為 
-* requirements.txt 
+在資料夾裡，有幾個比較重要的檔案，分別為
+* requirements.txt
 * Procfile
 * runtime.txt
 
@@ -67,18 +68,18 @@ git clone https://github.com/twtrubiks/Deploying-Flask-To-Heroku.git
 
 p.s 請安裝你需要的套件即可
 
-``` 
+```
 pip freeze
 ```
 ![alt tag](http://i.imgur.com/WxuORWB.jpg)
 
-然後可以使用以下指令匯出文字檔 requirements.txt 
-``` 
+然後可以使用以下指令匯出文字檔 requirements.txt
+```
 pip freeze > requirements.txt
 ```
 ![alt tag](http://i.imgur.com/mlhGXOk.jpg)
 
-該目錄底下會多出 requirements.txt 
+該目錄底下會多出 requirements.txt
 
 p.s 可以把不需要安裝的套件從 requirements.txt 裡移除
 
@@ -93,7 +94,7 @@ Procfile 這個檔案是要告訴 [Heroku](https://dashboard.heroku.com/) 要如
 所以在 <b>requirements.txt</b> 裡，請記得要輸入 [gunicorn](http://gunicorn.org/)
 
 Procfile 檔案，基本使用方法如下
-``` 
+```
 web gunicorn app_run:app
 ```
 app_run 就是你的 app_run.py，請依照自己設定的名稱自行修改
@@ -102,7 +103,7 @@ app_run 就是你的 app_run.py，請依照自己設定的名稱自行修改
 #### runtime.txt
 
 runtime.txt 檔案裡，只需要簡單的填入你想要指定的 python 版本
-``` 
+```
 python-3.4.3
 ```
 可參考 [Heroku python-runtimes](https://devcenter.heroku.com/articles/python-runtimes)
@@ -116,7 +117,7 @@ python-3.4.3
 方法一 :
 
 使用你的 cmd (命令提示字元) 輸入以下指令
-``` 
+```
 heroku create
 ```
 ![alt tag](http://i.imgur.com/OJS8K3N.jpg)
@@ -131,13 +132,13 @@ p.s 你看到的網址會和我看到的不一樣，請輸入你看到的
 #### 初始化
 
 使用你的 cmd (命令提示字元) 切換到目錄底下，先著初始化
-``` 
+```
 git init
 ```
 
 #### 佈署
 指定 remote
-``` 
+```
 heroku git:remote -a tranquil-earth-29753
 ```
 tranquil-earth-29753 這是我自己的，請輸入你的
@@ -150,7 +151,7 @@ tranquil-earth-29753 這是我自己的，請輸入你的
 
 可以參考我之前寫的 [Git-Tutorials](https://github.com/twtrubiks/Git-Tutorials)
 
-``` 
+```
 git add .
 git commit -am "make it better"
 git push heroku master
@@ -160,11 +161,11 @@ git push heroku master
 ![alt tag](http://i.imgur.com/gPaK7kd.jpg)
 
 佈署完畢，網址的格式為，如上面這張圖
-``` 
+```
 https://[ 你的 app 名稱 ].herokuapp.com/
 ```
 例如我的網址格式為
-``` 
+```
 https://tranquil-earth-29753.herokuapp.com/
 ```
 
@@ -182,9 +183,9 @@ https://tranquil-earth-29753.herokuapp.com/
 
 所以這時候就要看 log 資訊。
 
-可以使用以下指令查看你在 heroku上 的 web app 的 log 
+可以使用以下指令查看你在 heroku上 的 web app 的 log
 
-``` 
+```
 heroku logs
 ```
 ![alt tag](http://i.imgur.com/1Oe5rER.jpg)
@@ -194,7 +195,7 @@ heroku logs
 ![alt tag](http://i.imgur.com/NmyRvxs.jpg)
 
 網址格式為
-``` 
+```
 https://dashboard.heroku.com/apps/[ 你的 app 名稱 ]/logs
 ```
 
@@ -237,7 +238,7 @@ https://dashboard.heroku.com/apps/[ 你的 app 名稱 ]/logs
 
 現在我們來建立 DB 的 TABLE
 
-先將 URI 這個很長的連接字串，貼到 dbModel.py 裡面
+先將 URI 這個很長的連接字串，貼到 [dbModel.py](https://github.com/twtrubiks/Deploying-Flask-To-Heroku/blob/master/dbModel.py) 裡面
 
 ```
 app.config[
@@ -258,7 +259,7 @@ pip install psycopg2
 
 一切處理完畢之後，再進行部屬就完成了。
 
-下圖為簡單的範例  [Demo](https://tranquil-earth-29753.herokuapp.com/)
+下圖為簡單的範例  [Demo](https://flask-demo-test.herokuapp.com/index)
 
 ![alt tag](http://i.imgur.com/j1JAKS4.jpg)
 
