@@ -197,7 +197,77 @@ heroku logs
 ``` 
 https://dashboard.heroku.com/apps/[ 你的 app 名稱 ]/logs
 ```
-## 執行環境 
+
+## 如何在 heroku 上使用 database
+
+請先到下列網址建立 database
+[heroku addons](https://elements.heroku.com/addons)
+
+你會看到很多 db ，這裡用 Heroku Postgres 當作範例
+
+![alt tag](http://i.imgur.com/AxoKeka.jpg)
+
+接著安裝就行了，如果你還沒有登入，他會請你先登入
+
+![alt tag](http://i.imgur.com/FCaqoPB.jpg)
+
+選擇你的 db 是要給哪個專案用的
+
+![alt tag](http://i.imgur.com/BQZVgjc.jpg)
+
+接著選擇方案，這裡選擇 FREE 方案
+
+![alt tag](http://i.imgur.com/jleHgxw.jpg)
+
+接下來你就會看到 DB 已經被建立了
+
+![alt tag](http://i.imgur.com/aa1kX6o.jpg)
+
+點擊他，就可以跳到下面的畫面
+
+![alt tag](http://i.imgur.com/eGQKDg1.jpg)
+
+接著按 View Credentials
+
+![alt tag](http://i.imgur.com/HuHQUvm.jpg)
+
+可以看到自己 db 的一些資料，包含 帳號、密碼 資訊
+
+![alt tag](http://i.imgur.com/roGcz1i.jpg)
+
+現在我們來建立 DB 的 TABLE
+
+先將 URI 這個很長的連接字串，貼到 dbModel.py 裡面
+
+```
+app.config[
+    'SQLALCHEMY_DATABASE_URI'] = 'postgres://XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
+```
+
+請貼自己的連接字串!!!
+
+之後，我們使用 [Flask-Migrate-Tutorial](https://github.com/twtrubiks/Flask-Migrate-Tutorial) 來建立  DB 的 TABLE，
+
+如果不懂，請參考  [Flask-Migrate-Tutorial](https://github.com/twtrubiks/Flask-Migrate-Tutorial) 範例。
+
+P.S 假如你和我一樣是使用 PostgreSQL ， 需要額外安裝套件 [psycopg2](http://initd.org/psycopg/)
+
+```
+pip install psycopg2
+```
+
+一切處理完畢之後，再進行部屬就完成了。
+
+下圖為簡單的範例  [Demo](https://tranquil-earth-29753.herokuapp.com/)
+
+![alt tag](http://i.imgur.com/j1JAKS4.jpg)
+
+database information 就是將 db 的資料全部顯示出來
+
+![alt tag](http://i.imgur.com/a6F14Aw.jpg)
+
+
+## 執行環境
 * Windows 10
 
 ## Reference 

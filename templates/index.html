@@ -4,9 +4,54 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Title</title>
+    <title>This is example</title>
+    <link type="text/css" rel="stylesheet" href="static/stylesheets/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="static/stylesheets/jquery.dataTables.css">
+    <script src="static/javascripts/jquery.min.js"></script>
+    <script src="static/javascripts/bootstrap.min.js"></script>
+    <script src="static/javascripts/jquery.dataTables.js"></script>
 </head>
 <body>
-    This is example - {{data}}
+     <div class="container">
+        <div class="jumbotron">
+            <h1>This is example</h1>
+            <p>{{data}} Demo</p>
+        </div>
+        <h2>Please enter the information</h2>
+          <form action="/API/add_data" method="post">
+              <div class="form-group">
+                  <input type="text" class="form-control" name="name" placeholder="Name">
+              </div>
+              <div class="form-group">
+                  <input type="text" class="form-control" name="description" placeholder="Description">
+              </div>
+              <button type="submit" class="btn btn-default">Submit</button>
+           </form>
+        <h2>database information</h2>
+          <table id="datatables" class="table table-hover">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>CreateDate</th>
+                </tr>
+            </thead>
+            <tbody>
+               {% for history in history_list %}
+                   <tr>
+                        <td>{{ history.Id }}</td>
+                        <td>{{ history.Name }}</td>
+                        <td>{{ history.Description }}</td>
+                        <td>{{ history.CreateDate }}</td>
+                    </tr>
+               {% endfor%}
+            </tbody>
+        </table>
+      </div>
+
+    <script>
+        $('#datatables').DataTable();
+    </script>
 </body>
 </html>
