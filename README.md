@@ -1,7 +1,7 @@
 # Deploying-Flask-To-Heroku
 Deploying a Flask App To Heroku Tutorial 📝  
 
-* [Youtube Demo](https://youtu.be/fidKOYWWfkM)   
+* [Youtube Demo](https://youtu.be/fidKOYWWfkM)  
 * [How to use Heroku Postgres deploying](https://youtu.be/OvQetdMN88E)
 
 今天教大家如何佈署 Flask App 到 [Heroku](https://dashboard.heroku.com/)
@@ -168,6 +168,7 @@ https://[ 你的 app 名稱 ].herokuapp.com/
 ```
 https://tranquil-earth-29753.herokuapp.com/
 ```
+commit ID [4a42e26aee2bff1b10247d7e8a75d4d86b0c83b8](https://github.com/twtrubiks/Deploying-Flask-To-Heroku/tree/4a42e26aee2bff1b10247d7e8a75d4d86b0c83b8)
 
 ## 畫面
 
@@ -260,6 +261,8 @@ pip install psycopg2
 一切處理完畢之後，再進行部屬就完成了。
 
 下圖為簡單的範例  [Demo](https://flask-demo-test.herokuapp.com/index)
+
+commit ID[ce4c8ee68f58c861a5a8072793912b204c186906](https://github.com/twtrubiks/Deploying-Flask-To-Heroku/tree/ce4c8ee68f58c861a5a8072793912b204c186906)
 
 ![alt tag](http://i.imgur.com/j1JAKS4.jpg)
 
