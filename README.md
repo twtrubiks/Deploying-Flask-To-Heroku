@@ -1,7 +1,8 @@
 # Deploying-Flask-To-Heroku
-Deploying a Flask App To Heroku Tutorial 📝  
 
-* [Youtube Demo](https://youtu.be/fidKOYWWfkM)  
+Deploying a Flask App To Heroku Tutorial 📝
+
+* [Youtube Demo](https://youtu.be/fidKOYWWfkM)
 * [How to use Heroku Postgres deploying](https://youtu.be/OvQetdMN88E)
 
 今天教大家如何佈署 Flask App 到 [Heroku](https://dashboard.heroku.com/)
@@ -14,7 +15,6 @@ Deploying a Flask App To Heroku Tutorial 📝
 * 有SSL(https)。
 
 更多說明請參考 [Heroku](https://dashboard.heroku.com/)
-
 
 ## 教學
 
@@ -32,7 +32,7 @@ Deploying a Flask App To Heroku Tutorial 📝
 
 安裝完後，請使用你的 cmd (命令提示字元) 輸入以下指令
 
-```
+```cmd
 heroku --version
 ```
 
@@ -40,22 +40,24 @@ heroku --version
 
 ![alt tag](http://i.imgur.com/UuWGUk1.jpg)
 
-
 接著再請你使用你的 cmd (命令提示字元) 輸入你的 [Heroku](https://dashboard.heroku.com/) 帳號  和 密碼
-```
+
+```cmd
 heroku login
 ```
+
 ![alt tag](http://i.imgur.com/6vtoORM.jpg)
 
 ### 步驟三
 
 請先 clone 我的簡單 flask 範例
 
-```
+```cmd
 git clone https://github.com/twtrubiks/Deploying-Flask-To-Heroku.git
 ```
 
 在資料夾裡，有幾個比較重要的檔案，分別為
+
 * requirements.txt
 * Procfile
 * runtime.txt
@@ -68,15 +70,18 @@ git clone https://github.com/twtrubiks/Deploying-Flask-To-Heroku.git
 
 p.s 請安裝你需要的套件即可
 
-```
+```cmd
 pip freeze
 ```
+
 ![alt tag](http://i.imgur.com/WxuORWB.jpg)
 
 然後可以使用以下指令匯出文字檔 requirements.txt
-```
+
+```cmd
 pip freeze > requirements.txt
 ```
+
 ![alt tag](http://i.imgur.com/mlhGXOk.jpg)
 
 該目錄底下會多出 requirements.txt
@@ -91,21 +96,24 @@ Procfile 這個檔案是要告訴 [Heroku](https://dashboard.heroku.com/) 要如
 
 [python-gunicorn Heroku](https://devcenter.heroku.com/articles/python-gunicorn)
 
-所以在 <b>requirements.txt</b> 裡，請記得要輸入 [gunicorn](http://gunicorn.org/)
+所以在 **requirements.txt**> 裡，請記得要輸入 [gunicorn](http://gunicorn.org/)
 
 Procfile 檔案，基本使用方法如下
-```
+
+```text
 web gunicorn app_run:app
 ```
-app_run 就是你的 app_run.py，請依照自己設定的名稱自行修改
 
+app_run 就是你的 app_run.py，請依照自己設定的名稱自行修改
 
 #### runtime.txt
 
 runtime.txt 檔案裡，只需要簡單的填入你想要指定的 python 版本
-```
+
+```text
 python-3.4.3
 ```
+
 可參考 [Heroku python-runtimes](https://devcenter.heroku.com/articles/python-runtimes)
 
 如果你不想指定 python 的版本，這個檔案可以忽略。
@@ -117,9 +125,11 @@ python-3.4.3
 方法一 :
 
 使用你的 cmd (命令提示字元) 輸入以下指令
-```
+
+```cmd
 heroku create
 ```
+
 ![alt tag](http://i.imgur.com/OJS8K3N.jpg)
 
 p.s 你看到的網址會和我看到的不一樣，請輸入你看到的
@@ -132,15 +142,19 @@ p.s 你看到的網址會和我看到的不一樣，請輸入你看到的
 #### 初始化
 
 使用你的 cmd (命令提示字元) 切換到目錄底下，先著初始化
-```
+
+```cmd
 git init
 ```
 
 #### 佈署
+
 指定 remote
-```
+
+```cmd
 heroku git:remote -a tranquil-earth-29753
 ```
+
 tranquil-earth-29753 這是我自己的，請輸入你的
 
 這些指令你可以在 web app 裡的 deploy 看到
@@ -151,23 +165,28 @@ tranquil-earth-29753 這是我自己的，請輸入你的
 
 可以參考我之前寫的 [Git-Tutorials](https://github.com/twtrubiks/Git-Tutorials)
 
-```
+```cmd
 git add .
 git commit -am "make it better"
 git push heroku master
 ```
+
 ![alt tag](http://i.imgur.com/pRC4WGW.jpg)
 
 ![alt tag](http://i.imgur.com/gPaK7kd.jpg)
 
 佈署完畢，網址的格式為，如上面這張圖
-```
+
+```url
 https://[ 你的 app 名稱 ].herokuapp.com/
 ```
+
 例如我的網址格式為
-```
+
+```url
 https://tranquil-earth-29753.herokuapp.com/
 ```
+
 commit ID [4a42e26aee2bff1b10247d7e8a75d4d86b0c83b8](https://github.com/twtrubiks/Deploying-Flask-To-Heroku/tree/4a42e26aee2bff1b10247d7e8a75d4d86b0c83b8)
 
 ## 畫面
@@ -180,15 +199,16 @@ commit ID [4a42e26aee2bff1b10247d7e8a75d4d86b0c83b8](https://github.com/twtrubik
 
 ## LOG 資訊
 
-<b>log 的資訊非常重要</b>，因為有時候本機端可以正常運行，但佈署上去就無法運行，
+**log 的資訊非常重要** ，因為有時候本機端可以正常運行，但佈署上去就無法運行，
 
 所以這時候就要看 log 資訊。
 
 可以使用以下指令查看你在 heroku上 的 web app 的 log
 
-```
+```cmd
 heroku logs
 ```
+
 ![alt tag](http://i.imgur.com/1Oe5rER.jpg)
 
 或是可以從網頁端查看
@@ -196,7 +216,8 @@ heroku logs
 ![alt tag](http://i.imgur.com/NmyRvxs.jpg)
 
 網址格式為
-```
+
+```url
 https://dashboard.heroku.com/apps/[ 你的 app 名稱 ]/logs
 ```
 
@@ -241,7 +262,7 @@ https://dashboard.heroku.com/apps/[ 你的 app 名稱 ]/logs
 
 先將 URI 這個很長的連接字串，貼到 [dbModel.py](https://github.com/twtrubiks/Deploying-Flask-To-Heroku/blob/master/dbModel.py) 裡面
 
-```
+```python
 app.config[
     'SQLALCHEMY_DATABASE_URI'] = 'postgres://XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
 ```
@@ -254,7 +275,7 @@ app.config[
 
 P.S 假如你和我一樣是使用 PostgreSQL ， 需要額外安裝套件 [psycopg2](http://initd.org/psycopg/)
 
-```
+```cmd
 pip install psycopg2
 ```
 
@@ -270,13 +291,14 @@ database information 就是將 db 的資料全部顯示出來
 
 ![alt tag](http://i.imgur.com/a6F14Aw.jpg)
 
-
 ## 執行環境
+
 * Windows 10
 
-## Reference 
+## Reference
+
 * [Heroku](https://dashboard.heroku.com/)
 
-
 ## License
+
 MIT license
