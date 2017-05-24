@@ -96,7 +96,7 @@ Procfile 這個檔案是要告訴 [Heroku](https://dashboard.heroku.com/) 要如
 
 [python-gunicorn Heroku](https://devcenter.heroku.com/articles/python-gunicorn)
 
-所以在 **requirements.txt**> 裡，請記得要輸入 [gunicorn](http://gunicorn.org/)
+所以在 **requirements.txt** 裡，請記得要輸入 [gunicorn](http://gunicorn.org/)
 
 Procfile 檔案，基本使用方法如下
 
@@ -283,7 +283,7 @@ pip install psycopg2
 
 下圖為簡單的範例  [Demo](https://flask-demo-test.herokuapp.com/index)
 
-commit ID[ce4c8ee68f58c861a5a8072793912b204c186906](https://github.com/twtrubiks/Deploying-Flask-To-Heroku/tree/ce4c8ee68f58c861a5a8072793912b204c186906)
+commit ID [ce4c8ee68f58c861a5a8072793912b204c186906](https://github.com/twtrubiks/Deploying-Flask-To-Heroku/tree/ce4c8ee68f58c861a5a8072793912b204c186906)
 
 ![alt tag](http://i.imgur.com/j1JAKS4.jpg)
 
