@@ -291,6 +291,10 @@ database information 就是將 db 的資料全部顯示出來
 
 ![alt tag](http://i.imgur.com/a6F14Aw.jpg)
 
+## Heroku 注意事項
+
+因為 heroku 的關係，有些人可能會遇到佈署失敗的問題，可以試著將 [runtime.txt](https://github.com/twtrubiks/Deploying-Flask-To-Heroku/blob/master/runtime.txt)  修改為 3.6.2
+
 ## 執行環境
 
 * Windows 10
