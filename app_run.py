@@ -34,7 +34,7 @@ def add_data():
         )
         db.session.add(add_data)
         db.session.commit()
-    return redirect('index')
+    return redirect(url_for('index'))
 
 
 if __name__ == '__main__':

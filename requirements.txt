@@ -1,10 +1,10 @@
 click==6.7
-Flask==0.12
+Flask==1.0.2
 Flask-SQLAlchemy==2.1
 Flask-Migrate==2.0.3
 gunicorn==19.6.0
 itsdangerous==0.24
 Jinja2==2.9.5
 MarkupSafe==0.23
-Werkzeug==0.11.15
-psycopg2==2.6.2
+Werkzeug==0.15.5
+psycopg2==2.7.3.1
